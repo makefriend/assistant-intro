@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CodeMate 本地助手</title>
-  <meta name="description" content="CodeMate 本地助手介绍与联系方式" />
+  <title>AI本地化助手 · 备用下载页</title>
+  <meta name="description" content="AI本地化助手备用下载页，提供官网入口、安装教程、插件下载与联系方式。" />
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
@@ -16,41 +20,104 @@
     }
 
     .hero {
-      background: linear-gradient(135deg, #1f2937, #2563eb);
+      background: linear-gradient(135deg, #0f172a, #2563eb);
       color: #ffffff;
       text-align: center;
-      padding: 70px 20px;
+      padding: 72px 20px 82px;
+    }
+
+    .hero .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      padding: 6px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #dbeafe;
+      font-size: 14px;
+      font-weight: 700;
     }
 
     .hero h1 {
       margin: 0 0 16px;
       font-size: 42px;
+      letter-spacing: -0.02em;
     }
 
     .hero p {
-      max-width: 780px;
+      max-width: 820px;
       margin: 0 auto;
       font-size: 18px;
+      color: #e5edff;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 20px;
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: #ffffff;
+      color: #1d4ed8;
+      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.18);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.28);
     }
 
     .container {
-      max-width: 960px;
-      margin: -36px auto 60px;
+      max-width: 1000px;
+      margin: -42px auto 60px;
       padding: 0 20px;
     }
 
     .card {
       background: #ffffff;
+      border: 1px solid #e5e7eb;
       border-radius: 18px;
-      padding: 32px;
-      margin-bottom: 24px;
-      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      padding: 30px;
+      margin-bottom: 22px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.07);
     }
 
     h2 {
-      margin-top: 0;
+      margin: 0 0 14px;
       color: #111827;
       font-size: 26px;
+      line-height: 1.35;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
     }
 
     .grid {
@@ -74,10 +141,12 @@
     }
 
     .notice {
+      margin-top: 18px;
       background: #eff6ff;
       border-left: 4px solid #2563eb;
       border-radius: 10px;
-      padding: 16px 18px;
+      padding: 14px 16px;
+      color: #334155;
     }
 
     .contact-list {
@@ -86,10 +155,51 @@
       gap: 14px;
     }
 
-    .contact-list div {
-      background: #f3f4f6;
-      border-radius: 12px;
+    .contact-item {
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
       padding: 16px;
+    }
+
+    .contact-item strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #111827;
+      font-size: 16px;
+    }
+
+    .download-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 20px 0 16px;
+    }
+
+    .download-actions .btn {
+      color: #ffffff;
+      background: #2563eb;
+      box-shadow: 0 10px 22px rgba(37, 99, 235, 0.22);
+    }
+
+    .download-actions .btn-light {
+      color: #2563eb;
+      background: #eff6ff;
+      box-shadow: none;
+      border: 1px solid #bfdbfe;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 14px;
+    }
+
+    .muted {
+      color: #6b7280;
+      font-size: 14px;
     }
 
     a {
@@ -104,102 +214,102 @@
     footer {
       text-align: center;
       color: #6b7280;
-      padding: 30px 20px 50px;
+      padding: 28px 20px 48px;
       font-size: 14px;
     }
 
     @media (max-width: 640px) {
       .hero {
-        padding: 56px 18px;
+        padding: 56px 18px 70px;
       }
 
       .hero h1 {
         font-size: 32px;
       }
 
+      .hero p {
+        font-size: 16px;
+      }
+
       .card {
-        padding: 24px;
+        padding: 22px;
+      }
+
+      .download-actions .btn,
+      .hero-actions .btn {
+        width: 100%;
       }
     }
   </style>
 </head>
 <body>
   <section class="hero">
-    <h1>CodeMate 本地助手</h1>
+    <div class="tag">GitHub 备用下载页</div>
+    <h1>AI本地化助手</h1>
     <p>
-      一个面向本地工作区的智能助手，帮助用户在授权目录内读取、分析、整理和修改文件，
-      适用于代码项目、文档资料、配置文件、报告和知识库内容整理。
+      让网页端 AI 在你授权的范围内读取本地项目目录和文件内容，帮助理解项目结构、分析代码逻辑、定位问题并整理修改方案。
     </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://aiworkplugin.cc/" target="_blank" rel="noopener noreferrer">访问正式官网</a>
+      <a class="btn btn-secondary" href="https://aiworkplugin.cc/#install" target="_blank" rel="noopener noreferrer">查看安装教程</a>
+      <a class="btn btn-secondary" href="https://github.com/makefriend/assistant-intro" target="_blank" rel="noopener noreferrer">GitHub 仓库</a>
+    </div>
   </section>
 
   <main class="container">
     <section class="card">
+      <h2>页面说明</h2>
+      <p>
+        本页面是 AI本地化助手的 GitHub 备用页，用于提供备用下载、版本说明和联系方式。
+        普通用户建议优先访问正式官网：
+        <a href="https://aiworkplugin.cc/" target="_blank" rel="noopener noreferrer">https://aiworkplugin.cc/</a>。
+      </p>
+      <div class="notice">
+        正式官网用于产品介绍、安装教程和主下载入口；GitHub 页面主要作为备用下载和版本记录入口。
+      </div>
+    </section>
+
+    <section class="card">
       <h2>助手介绍</h2>
       <p>
-        CodeMate 本地助手是一个专注于本地文件和工作区处理的智能助手。
-        用户可以根据自己的需要，让助手协助分析代码、整理资料、修改文档、
-        检查配置文件、生成说明页面或梳理项目结构。
+        AI本地化助手不是新的 IDE，也不是替代开发者自动开发的工具。它的核心价值是：
+        让网页端 AI 具备访问本地授权项目文件的能力，减少反复复制代码、上传压缩包、截图目录和粘贴报错信息的成本。
       </p>
       <p>
-        助手的核心原则是：只在用户授权的目录范围内工作，涉及修改文件的操作前，
-        会先说明将要修改的内容，并在用户确认后再执行。
+        通过本地插件建立授权通道后，网页端 AI 可以先理解项目结构、读取相关文件、整理上下文，
+        再把更明确的任务交给高级模型、Codex 或开发者继续处理。
       </p>
     </section>
 
     <section class="card">
-      <h2>我能帮你做什么</h2>
+      <h2>它适合做什么</h2>
       <div class="grid">
         <div class="item">
-          <strong>分析本地项目</strong>
-          读取授权目录内的项目文件，帮助理解目录结构、核心逻辑、依赖关系和运行方式。
+          <strong>项目结构分析</strong>
+          读取授权目录内的项目文件，帮助梳理模块结构、关键入口、依赖关系和运行方式。
         </div>
         <div class="item">
-          <strong>整理文档资料</strong>
-          整理笔记、文章、报告、教程、知识库内容，让信息更清晰、更方便阅读。
+          <strong>代码文件阅读</strong>
+          在不反复复制粘贴的情况下，让网页端 AI 快速理解相关代码和上下文。
         </div>
         <div class="item">
-          <strong>修改文件内容</strong>
-          在用户确认后，协助修改代码、配置文件、Markdown 文档、HTML 页面等内容。
+          <strong>Bug 初步定位</strong>
+          结合报错、日志、配置和源码文件，先做问题范围分析和排查建议。
         </div>
         <div class="item">
-          <strong>生成说明页面</strong>
-          生成 README、项目说明、使用手册、服务介绍页、FAQ 和联系方式页面。
+          <strong>项目交接整理</strong>
+          生成项目说明、目录说明、修改清单、交接文档和后续开发建议。
         </div>
       </div>
     </section>
 
     <section class="card">
-      <h2>适用场景</h2>
-      <div class="grid">
-        <div class="item">
-          <strong>代码项目梳理</strong>
-          快速了解一个项目包含哪些模块、如何运行、哪里需要优化。
-        </div>
-        <div class="item">
-          <strong>知识库搭建</strong>
-          把零散资料整理成结构化页面，适合对外展示或内部沉淀。
-        </div>
-        <div class="item">
-          <strong>配置检查</strong>
-          检查配置文件、环境说明、部署说明和常见错误。
-        </div>
-        <div class="item">
-          <strong>内容优化</strong>
-          优化介绍文案、产品说明、服务说明、操作指南和项目文档。
-        </div>
-      </div>
-    </section>
-
-    <section class="card">
-      <h2>工作原则</h2>
-      <p>
-        为了保护用户的数据安全，CodeMate 本地助手遵循以下原则：
-      </p>
+      <h2>使用原则</h2>
       <ul>
-        <li>只读取和处理用户授权目录范围内的文件。</li>
-        <li>不主动读取密钥、Token、证书、账号密码等敏感文件。</li>
-        <li>执行写入、删除、移动、重命名、批量替换前，会先说明操作内容。</li>
-        <li>修改完成后，会输出修改清单，方便用户检查和验证。</li>
+        <li>只读取和处理用户主动授权目录范围内的文件。</li>
+        <li>不要授权系统目录、隐私目录、证书密钥目录等敏感位置。</li>
+        <li>涉及写入、删除、移动、重命名、批量替换等操作前，应先确认修改范围。</li>
+        <li>建议先用于项目结构理解、上下文整理、问题分析和交接说明。</li>
       </ul>
       <div class="notice">
         使用前请确认授权目录中不包含不希望被读取或处理的敏感内容。
@@ -209,21 +319,17 @@
     <section class="card">
       <h2>联系方式</h2>
       <div class="contact-list">
-        <div>
-          <strong>微信</strong><br />
-          请填写你的微信号
+        <div class="contact-item">
+          <strong>公众号</strong>
+          微信搜索公众号「九逸编码」，关注后回复「插件助手」。
         </div>
-        <div>
-          <strong>邮箱</strong><br />
-          <a href="mailto:yourname@example.com">yourname@example.com</a>
+        <div class="contact-item">
+          <strong>邮箱</strong>
+          <a href="mailto:aiworkplugin@163.com">aiworkplugin@163.com</a>
         </div>
-        <div>
-          <strong>企业微信 / 飞书 / 钉钉</strong><br />
-          请填写你的联系入口
-        </div>
-        <div>
-          <strong>服务时间</strong><br />
-          工作日 09:00 - 18:00
+        <div class="contact-item">
+          <strong>闲鱼</strong>
+          打开闲鱼搜索「快码小站」店铺。
         </div>
       </div>
     </section>
@@ -231,33 +337,30 @@
     <section class="card">
       <h2>下载安装包</h2>
       <p>
-        点击下方按钮下载 CodeMate 本地助手安装包。下载完成后，请解压压缩包并按照说明完成安装或使用。
+        点击下方按钮下载 AI本地化助手插件安装包。下载完成后，请解压压缩包，并按照官网安装教程完成安装。
       </p>
-    
-      <p>
-        <a
-          href="https://github.com/makefriend/assistant-intro/releases/latest/download/extension-folder-client.zip"
-          style="display:inline-block;background:#2563eb;color:#ffffff;padding:14px 22px;border-radius:10px;font-weight:600;text-decoration:none;"
-        >
-          下载 CodeMate 本地助手
+
+      <div class="download-actions">
+        <a class="btn" href="https://github.com/makefriend/assistant-intro/releases/latest/download/extension-folder-client.zip">
+          下载 AI本地化助手插件
         </a>
-      </p>
-    
-      <p>
+        <a class="btn btn-light" href="https://aiworkplugin.cc/#install" target="_blank" rel="noopener noreferrer">
+          查看安装教程
+        </a>
+      </div>
+
+      <div class="badges">
         <img
           src="https://img.shields.io/github/downloads/makefriend/assistant-intro/total?label=总下载量&style=for-the-badge"
           alt="GitHub 总下载量"
         />
-      </p>
-    
-      <p>
         <img
           src="https://img.shields.io/github/downloads/makefriend/assistant-intro/latest/extension-folder-client.zip?label=最新版下载量&style=for-the-badge"
           alt="最新版下载量"
         />
-      </p>
-    
-      <p style="color:#6b7280;font-size:14px;">
+      </div>
+
+      <p class="muted">
         文件名：extension-folder-client.zip
       </p>
     </section>
@@ -265,18 +368,18 @@
     <section class="card">
       <h2>开始使用</h2>
       <p>
-        你可以直接说明自己的目标，例如：
-        “帮我分析这个项目结构”、“帮我整理这份文档”、“帮我修改 README”、
-        “帮我生成一个介绍页面”或“帮我检查配置文件”。
+        安装插件后，按正式官网的安装步骤完成手机号、访问密钥和授权目录配置。连接成功后，
+        你可以让网页端 AI 帮你分析项目结构、读取代码文件、整理问题上下文或生成交接说明。
       </p>
       <p>
-        在处理本地文件前，请确认已经授权正确的工作目录。
+        安装教程：
+        <a href="https://aiworkplugin.cc/#install" target="_blank" rel="noopener noreferrer">https://aiworkplugin.cc/#install</a>
       </p>
     </section>
   </main>
 
   <footer>
-    © 2026 CodeMate 本地助手 · 本页面托管于 GitHub Pages
+    © 2026 AI本地化助手 · 本页面托管于 GitHub Pages
   </footer>
 </body>
 </html>
